@@ -17,15 +17,15 @@ export function HeroSection() {
                     <div className="py-24 md:pb-32 lg:pb-36 lg:pt-72">
                         <div className="relative z-10 mx-auto flex max-w-7xl flex-col px-6 lg:block lg:px-12">
                             <div className="mx-auto max-w-lg text-center lg:ml-0 lg:max-w-full lg:text-left">
-                                <h1 className="mt-8 max-w-2xl text-balance text-5xl md:text-6xl lg:mt-16 xl:text-7xl font-bold tracking-tight">Build 10x Faster with NS</h1>
-                                <p className="mt-8 max-w-2xl text-balance text-lg text-muted-foreground">Highly customizable components for building modern websites and applications you mean it.</p>
+                                <h1 className="mt-8 max-w-2xl text-balance text-5xl md:text-6xl lg:mt-16 xl:text-7xl font-bold tracking-tight">Daurer</h1>
+                                <p className="mt-8 max-w-2xl text-balance text-lg text-muted-foreground">Criamos experiências digitais premium. Sites de alta conversão, rápidos e com design exclusivo para posicionar sua marca no topo do mercado.</p>
 
                                 <div className="mt-12 flex flex-col items-center justify-center gap-2 sm:flex-row lg:justify-start">
                                     <Button
                                         size="lg"
                                         className="h-12 rounded-full pl-5 pr-3 text-base">
                                         <a href="#link" className="flex items-center">
-                                            <span className="text-nowrap">Start Building</span>
+                                            <span className="text-nowrap">Solicitar Orçamento</span>
                                             <ChevronRight className="ml-1 h-4 w-4" />
                                         </a>
                                     </Button>
@@ -34,7 +34,7 @@ export function HeroSection() {
                                         variant="ghost"
                                         className="h-12 rounded-full px-5 text-base hover:bg-zinc-950/5 dark:hover:bg-white/5">
                                         <a href="#link">
-                                            <span className="text-nowrap">Request a demo</span>
+                                            <span className="text-nowrap">Ver Portfólio</span>
                                         </a>
                                     </Button>
                                 </div>
@@ -52,7 +52,7 @@ export function HeroSection() {
                     <div className="group relative m-auto max-w-7xl px-6">
                         <div className="flex flex-col items-center md:flex-row">
                             <div className="md:max-w-44 md:border-r md:pr-6">
-                                <p className="text-end text-sm text-muted-foreground whitespace-nowrap">Powering the best teams</p>
+                                <p className="text-end text-sm text-muted-foreground whitespace-nowrap">Tecnologias de alta performance</p>
                             </div>
                             <div className="relative py-6 md:w-[calc(100%-11rem)]">
                                 <InfiniteSlider
@@ -155,10 +155,10 @@ export function HeroSection() {
 }
 
 const menuItems = [
-    { name: 'Features', href: '#link' },
-    { name: 'Solution', href: '#link' },
-    { name: 'Pricing', href: '#link' },
-    { name: 'About', href: '#link' },
+    { name: 'Serviços', href: '#servicos' },
+    { name: 'Portfólio', href: '#portfolio' },
+    { name: 'Sobre', href: '#sobre' },
+    { name: 'Contato', href: '#contato' },
 ]
 
 const HeroHeader = () => {
@@ -228,16 +228,9 @@ const HeroHeader = () => {
                             </div>
                             <div className="flex w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit">
                                 <Button
-                                    variant="outline"
                                     size="sm">
-                                    <a href="#">
-                                        <span>Login</span>
-                                    </a>
-                                </Button>
-                                <Button
-                                    size="sm">
-                                    <a href="#">
-                                        <span>Sign Up</span>
+                                    <a href="#contato">
+                                        <span>Fale Conosco</span>
                                     </a>
                                 </Button>
                             </div>
