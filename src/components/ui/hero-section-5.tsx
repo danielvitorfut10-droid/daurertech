@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button'
 import { InfiniteSlider } from '@/components/ui/infinite-slider'
 import { ProgressiveBlur } from '@/components/ui/progressive-blur'
 import { SplineScene } from '@/components/ui/splite'
-import { GooeyText } from '@/components/ui/gooey-text-morphing'
+import AnimatedTextCycle from '@/components/ui/animated-text-cycle'
 import { HandWrittenTitle } from '@/components/ui/hand-writing-text'
 import { cn } from '@/lib/utils'
 import { Menu, X, ChevronRight } from 'lucide-react'
@@ -19,11 +19,14 @@ export function HeroSection() {
                     <div className="py-24 md:pb-32 lg:pb-36 lg:pt-72">
                         <div className="relative z-10 mx-auto flex max-w-7xl flex-col px-6 lg:block lg:px-12">
                             <div className="mx-auto max-w-lg text-center lg:ml-0 lg:max-w-full lg:text-left">
-                                <GooeyText 
-                                    texts={["Daurer Cria", "Daurer Otimiza", "Daurer Escala", "Daurer Vende"]} 
-                                    className="h-[80px] md:h-[100px] lg:h-[120px] mt-8 lg:mt-16 lg:ml-[-1rem]" 
-                                    textClassName="font-bold tracking-tight" 
-                                />
+                                <h1 className="mt-8 lg:mt-16 max-w-2xl text-balance text-5xl md:text-6xl xl:text-7xl font-bold tracking-tight">
+                                    Daurer{" "}
+                                    <AnimatedTextCycle 
+                                        words={["Cria", "Otimiza", "Inova", "Escala", "Vende"]} 
+                                        interval={2500} 
+                                        className="text-transparent bg-clip-text bg-gradient-to-r from-[#9B99FE] to-[#2BC8B7]"
+                                    />
+                                </h1>
                                 <HandWrittenTitle 
                                     title="Criamos experiências digitais premium."
                                     subtitle="Sites de alta conversão, rápidos e com design exclusivo para posicionar sua marca no topo do mercado."
