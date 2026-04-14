@@ -6,7 +6,7 @@ export const TextParallaxContentExample = () => {
   return (
     <div id="servicos" className="bg-transparent pt-24 text-foreground">
       <TextParallaxContent
-        imgUrl="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop"
+        imgUrl="/imagem1.png"
         subheading="Velocidade"
         heading="Alta Performance"
       >
