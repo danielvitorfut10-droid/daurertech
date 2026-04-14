@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button'
 import { InfiniteSlider } from '@/components/ui/infinite-slider'
 import { ProgressiveBlur } from '@/components/ui/progressive-blur'
 import { SplineScene } from '@/components/ui/splite'
+import { GooeyText } from '@/components/ui/gooey-text-morphing'
 import { cn } from '@/lib/utils'
 import { Menu, X, ChevronRight } from 'lucide-react'
 import { useScroll, motion } from 'framer-motion' // Switched back to framer-motion as it's more stable for these imports in some envs, but user said motion/react. I'll try to stick to framer-motion if possible or motion if installed.
@@ -17,7 +18,11 @@ export function HeroSection() {
                     <div className="py-24 md:pb-32 lg:pb-36 lg:pt-72">
                         <div className="relative z-10 mx-auto flex max-w-7xl flex-col px-6 lg:block lg:px-12">
                             <div className="mx-auto max-w-lg text-center lg:ml-0 lg:max-w-full lg:text-left">
-                                <h1 className="mt-8 max-w-2xl text-balance text-5xl md:text-6xl lg:mt-16 xl:text-7xl font-bold tracking-tight">Daurer</h1>
+                                <GooeyText 
+                                    texts={["Daurer Cria", "Daurer Otimiza", "Daurer Escala", "Daurer Vende"]} 
+                                    className="h-[80px] md:h-[100px] lg:h-[120px] mt-8 lg:mt-16" 
+                                    textClassName="font-bold tracking-tight" 
+                                />
                                 <p className="mt-8 max-w-2xl text-balance text-lg text-muted-foreground">Criamos experiências digitais premium. Sites de alta conversão, rápidos e com design exclusivo para posicionar sua marca no topo do mercado.</p>
 
                                 <div className="mt-12 flex flex-col items-center justify-center gap-2 sm:flex-row lg:justify-start">
