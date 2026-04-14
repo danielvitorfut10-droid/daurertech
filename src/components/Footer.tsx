@@ -1,4 +1,4 @@
-import { Instagram, Facebook, Linkedin } from "lucide-react";
+import { Mail, MessageCircle, Globe } from "lucide-react";
 
 const Footer = () => (
   <footer className="py-12 border-t border-border">
