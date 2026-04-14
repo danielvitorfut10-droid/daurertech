@@ -21,7 +21,7 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed top-6 left-1/2 -translate-x-1/2 z-50 transition-all duration-500 w-auto md:w-[95%] max-w-5xl rounded-full border shadow-[0_0_20px_rgba(255,255,255,0.05)] flex items-center justify-center ${
+      className={`fixed top-6 left-1/2 -translate-x-1/2 z-50 transition-all duration-500 w-[95%] max-w-5xl rounded-full border shadow-[0_0_20px_rgba(255,255,255,0.05)] flex items-center justify-between ${
         scrolled
           ? "bg-black/70 backdrop-blur-2xl border-white/40 shadow-[0_4px_30px_rgba(255,255,255,0.1)] md:scale-[0.98]"
           : "bg-black/40 backdrop-blur-xl border-white/30"
@@ -58,7 +58,7 @@ const Header = () => {
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Menu"
         >
-          {mobileOpen ? <X size={28} /> : <Menu size={28} />}
+          {mobileOpen ? <X size={36} /> : <Menu size={36} />}
         </button>
       </div>
 
