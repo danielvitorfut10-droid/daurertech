@@ -1,70 +1,52 @@
 
-# Recreate Daurer Website in React
+Objetivo: eliminar de vez o erro de tela branca “Cannot read properties of null (reading 'useState' / 'useRef')”, estabilizando o runtime React e removendo a origem do conflito.
 
-## Overview
-Rebuild the Daurer agency website (daurer.com/criacao-de-sites/) as a React single-page application in Portuguese (BR), matching the original design and content.
+1. Diagnóstico confirmado
+- O erro atual aponta para a camada de toast/theme, não para as seções da landing page.
+- `src/components/ui/sonner.tsx` usa `useTheme()` de `next-themes`, mas não existe `ThemeProvider` no app.
+- Ainda existem arquivos legados de toast no projeto (`src/hooks/use-toast.ts`, `src/components/ui/toaster.tsx`, `src/components/ui/toast.tsx`, `src/components/ui/use-toast.ts`), que continuam no grafo de dependências e coincidem com o stack trace.
+- Como o site não precisa de troca de tema agora, o uso de `next-themes` é desnecessário e é o primeiro ponto a remover.
 
-## Brand & Design System
-- **Primary color**: #005DFC (blue)
-- **Dark background sections**: deep blue/navy gradients
-- **Fonts**: Titillium Web (headings), Open Sans (body), Roboto (accents)
-- **Style**: Modern, professional, with diagonal section dividers and glass-morphism effects
-- **Logo**: Reference the Daurer logo from CDN
+2. Correção principal
+- Reescrever `src/components/ui/sonner.tsx` para não depender de `next-themes`.
+- Usar o `<Toaster />` do `sonner` com tema fixo compatível com o visual do projeto, sem `useTheme()`.
+- Manter `App.tsx` usando apenas esse toaster simplificado.
 
-## Sections to Build (in order)
+3. Limpeza do código legado
+- Remover completamente o stack antigo de toast:
+  - `src/hooks/use-toast.ts`
+  - `src/components/ui/toaster.tsx`
+  - `src/components/ui/toast.tsx`
+  - `src/components/ui/use-toast.ts`
+- Isso evita que o bundler/HMR continue puxando módulos antigos que aparecem no stack.
 
-### 1. Sticky Header/Navbar
-- Daurer logo (left)
-- Navigation links: "o que fazemos", "clientes", "sobre nós", "nosso time", "blog", "Contato"
-- "Contato" CTA button (right)
-- Transparent on top, becomes solid blue on scroll
-- Mobile hamburger menu
+4. Estabilização adicional
+- Se necessário, remover também a dependência `next-themes` do `package.json`, já que hoje ela não está sendo usada em nenhum outro lugar.
+- Manter o `dedupe` de React no Vite e fazer uma recompilação limpa para garantir que o preview pare de reutilizar módulos quebrados.
 
-### 2. Hero Section
-- Split layout: image left, text right
-- Heading: "AGÊNCIA DE CRIAÇÃO DE SITES PROFISSIONAIS"
-- Typewriter animation cycling: "EXPERIÊNCIA INTERNACIONAL", "PROJETOS COMPLEXOS", "PERFORMANCE", "Cibersegurança"
-- Diagonal bottom divider (triangle asymmetrical shape)
+5. Verificação após a correção
+- Confirmar que a home abre sem tela branca.
+- Testar especialmente:
+  - carregamento inicial
+  - FAQ (Accordion/Radix)
+  - header mobile
+  - navegação por âncoras
+- Se ainda restar erro de hooks, o próximo passo será isolar temporariamente componentes Radix restantes, mas pelo código lido a causa mais provável está no toast/theme legado.
 
-### 3. Services / "O que fazemos" Section
-- Service cards/icons showcasing web development capabilities
-- Content extracted from the original HTML
+Detalhes técnicos
+- Problema exato: o projeto mistura uma implementação moderna de toast (`sonner`) com código legado (`useToast` + Radix toast) e ainda usa `next-themes` sem provider global. Isso deixa o runtime suscetível a resolver hooks em um dispatcher nulo no preview.
+- Arquivos centrais da correção:
+  - `src/components/ui/sonner.tsx`
+  - `src/App.tsx`
+  - remoção dos arquivos legados de toast
+  - possivelmente `package.json`
 
-### 4. Clients Section
-- Client logos/portfolio showcase
-- Slider/carousel of client work
+Resultado esperado
+- A aplicação volta a renderizar normalmente.
+- O erro de `useState`/`useRef` some.
+- O projeto fica com uma única solução de toast, mais simples e consistente.
 
-### 5. About Us Section ("Sobre Nós")
-- Company description, 10+ years experience, 1000+ companies served
-- Two office locations (Alphaville/Barueri and São Paulo/Itaim Bibi)
-
-### 6. Our Team Section ("Nosso Time")
-- Team member cards with photos and roles
-
-### 7. FAQ Accordion Section
-- 13 FAQ items with expand/collapse functionality
-- Questions about pricing, timelines, hosting, SEO, WordPress, etc.
-- All content preserved in Portuguese
-
-### 8. Contact Form Section
-- Fields: name, email, phone, company
-- Service interest selector (clickable tags)
-- Budget range selector
-- File upload button
-- Submit button
-
-### 9. Footer
-- Three columns: DUNS registration + CNPJ, Logo + description + addresses, Institutional links
-- Two office addresses with Google Maps links
-- Links: Home, Criação de Sites, Consultoria SEO, Consultoria GA4, Blog, Política de Privacidade
-
-### 10. Mobile Sticky CTA
-- Fixed "Contato" button at bottom on mobile only
-
-## Technical Approach
-- Component-based architecture with separate files per section
-- Smooth scroll navigation between sections
-- Responsive design (desktop, tablet, mobile)
-- CSS animations for typewriter effect and scroll reveals
-- Accordion component for FAQ
-- All images referenced from original CDN URLs initially (can be replaced later)
+<lov-actions>
+<lov-open-history>View History</lov-open-history>
+<lov-link url="https://docs.lovable.dev/tips-tricks/troubleshooting">Troubleshooting docs</lov-link>
+</lov-actions>
