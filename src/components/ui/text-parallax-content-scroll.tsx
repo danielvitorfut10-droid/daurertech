@@ -79,28 +79,40 @@ const StickyImage = ({ imgUrl }: { imgUrl: string }) => {
   const scale = useTransform(scrollYProgress, [0, 1], [1, 0.85]);
   const opacity = useTransform(scrollYProgress, [0, 1], [1, 0]);
 
+  const isPng = imgUrl.endsWith(".png") || imgUrl.endsWith(".webp");
+
   return (
     <motion.div
       style={{
-        backgroundImage: `url(${imgUrl})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
         height: `calc(100vh - ${IMG_PADDING * 2}px)`,
         top: IMG_PADDING,
         scale,
+        ...(isPng ? {} : {
+          backgroundImage: `url(${imgUrl})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }),
       }}
       ref={targetRef}
-      className="sticky z-0 overflow-hidden rounded-3xl"
+      className={`sticky z-0 overflow-hidden rounded-3xl flex items-center justify-center ${isPng ? "bg-transparent" : ""}`}
     >
-      <motion.div
-        className="absolute inset-0 bg-neutral-950/70"
-        style={{
-          opacity,
-        }}
-      />
+      {isPng ? (
+        <motion.img
+          src={imgUrl}
+          alt=""
+          className="h-full w-auto object-contain select-none pointer-events-none"
+          style={{ opacity }}
+        />
+      ) : (
+        <motion.div
+          className="absolute inset-0 bg-neutral-950/70"
+          style={{ opacity }}
+        />
+      )}
     </motion.div>
   );
 };
+
 
 const OverlayCopy = ({ subheading, heading }: { subheading: string, heading: string }) => {
   const targetRef = useRef(null);
