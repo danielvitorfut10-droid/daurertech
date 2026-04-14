@@ -33,41 +33,27 @@ const Hero = () => {
   const displayText = phrases[phraseIndex].substring(0, charIndex);
 
   return (
-    <section className="relative min-h-screen flex items-center bg-gradient-to-br from-daurer-navy via-daurer-dark to-daurer-navy overflow-hidden">
-      {/* Decorative circles */}
-      <div className="absolute top-20 right-10 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-20 left-10 w-72 h-72 bg-daurer-cyan/5 rounded-full blur-3xl" />
+    <section 
+      className="relative min-h-screen flex items-center overflow-hidden bg-cover bg-center"
+      style={{ backgroundImage: 'url("/hero-bg.png")' }}
+    >
+      {/* Overlay for better readability */}
+      <div className="absolute inset-0 bg-daurer-navy/80 backdrop-blur-[2px] z-0" />
 
-      <div className="container mx-auto px-4 grid lg:grid-cols-2 gap-12 items-center pt-24 pb-32 relative z-10">
-        {/* Left: visual */}
-        <div className="hidden lg:flex justify-center">
-          <div className="relative w-[420px] h-[420px]">
-            <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/30 to-daurer-cyan/20 blur-2xl" />
-            <div className="relative glass rounded-2xl w-full h-full flex items-center justify-center">
-              <div className="text-center space-y-4">
-                <div className="w-20 h-20 mx-auto rounded-xl bg-primary/20 flex items-center justify-center">
-                  <span className="text-4xl font-titillium font-bold text-primary-foreground">D</span>
-                </div>
-                <p className="text-primary-foreground/60 font-opensans text-sm">300+ projetos entregues</p>
-                <p className="text-primary-foreground/60 font-opensans text-sm">20+ anos de experiência</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Right: text */}
-        <div className="space-y-6">
-          <p className="text-daurer-cyan font-titillium text-sm uppercase tracking-[0.3em] font-semibold">
+      <div className="container mx-auto px-4 flex flex-col items-center justify-center text-center pt-24 pb-32 relative z-10">
+        {/* Right: text (now centered) */}
+        <div className="space-y-6 flex flex-col items-center">
+          <p className="text-daurer-cyan font-titillium text-sm uppercase tracking-[0.3em] font-semibold text-center">
             Criação de Sites
           </p>
-          <h1 className="font-titillium text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground leading-tight">
+          <h1 className="font-titillium text-4xl md:text-5xl lg:text-7xl font-bold text-primary-foreground leading-tight text-center">
             AGÊNCIA DE CRIAÇÃO
             <br />
             DE SITES
             <br />
             <span className="text-primary">PROFISSIONAIS</span>
           </h1>
-          <p className="text-primary-foreground/70 font-opensans text-lg max-w-xl leading-relaxed">
+          <p className="text-primary-foreground/70 font-opensans text-lg max-w-2xl leading-relaxed text-center">
             Criação de sites complexos com foco em UX/UI, SEO e Performance.
             Agência em São Paulo com 300+ projetos entregues.
           </p>
