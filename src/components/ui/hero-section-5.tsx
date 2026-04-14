@@ -5,7 +5,6 @@ import { InfiniteSlider } from '@/components/ui/infinite-slider'
 import { ProgressiveBlur } from '@/components/ui/progressive-blur'
 import { SplineScene } from '@/components/ui/splite'
 import AnimatedTextCycle from '@/components/ui/animated-text-cycle'
-import { HandWrittenTitle } from '@/components/ui/hand-writing-text'
 import { cn } from '@/lib/utils'
 import { Menu, X, ChevronRight } from 'lucide-react'
 import { useScroll, motion } from 'framer-motion' // Switched back to framer-motion as it's more stable for these imports in some envs, but user said motion/react. I'll try to stick to framer-motion if possible or motion if installed.
@@ -20,18 +19,19 @@ export function HeroSection() {
                         <div className="relative z-10 mx-auto flex max-w-7xl flex-col px-6 lg:block lg:px-12">
                             <div className="mx-auto max-w-lg text-center lg:ml-0 lg:max-w-full lg:text-left">
                                 <h1 className="mt-8 lg:mt-16 max-w-2xl text-balance text-5xl md:text-6xl xl:text-7xl font-bold tracking-tight">
-                                    Daurer{" "}
-                                    <AnimatedTextCycle 
-                                        words={["Cria", "Otimiza", "Inova", "Escala", "Vende"]} 
-                                        interval={2500} 
-                                        className="text-transparent bg-clip-text bg-gradient-to-r from-[#9B99FE] to-[#2BC8B7]"
-                                    />
+                                    Daurer
                                 </h1>
-                                <HandWrittenTitle 
-                                    title="Criamos experiências digitais premium."
-                                    subtitle="Sites de alta conversão, rápidos e com design exclusivo para posicionar sua marca no topo do mercado."
-                                    className="mt-6 mx-auto lg:mx-0 max-w-2xl"
-                                />
+                                <div className="mt-6 max-w-2xl text-lg text-muted-foreground">
+                                    <span className="text-2xl text-foreground font-semibold block mb-2">
+                                        Daurer {" "}
+                                        <AnimatedTextCycle 
+                                            words={["Cria", "Otimiza", "Inova", "Escala", "Transforma"]} 
+                                            interval={2500} 
+                                            className="text-transparent bg-clip-text bg-gradient-to-r from-[#9B99FE] to-[#2BC8B7]"
+                                        />
+                                    </span>
+                                    Sites de alta conversão, rápidos e com design exclusivo para posicionar sua marca no topo do mercado.
+                                </div>
 
                                 <div className="mt-12 flex flex-col items-center justify-center gap-2 sm:flex-row lg:justify-start">
                                     <Button
