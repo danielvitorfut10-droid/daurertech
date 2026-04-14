@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import ThreeBackground from "./ThreeBackground";
 
 const phrases = [
   "EXPERIÊNCIA INTERNACIONAL",
@@ -33,12 +34,10 @@ const Hero = () => {
   const displayText = phrases[phraseIndex].substring(0, charIndex);
 
   return (
-    <section 
-      className="relative min-h-screen flex items-center overflow-hidden bg-cover bg-center"
-      style={{ backgroundImage: 'url("/hero-bg.png")' }}
-    >
-      {/* Overlay for better readability */}
-      <div className="absolute inset-0 bg-daurer-navy/80 backdrop-blur-[2px] z-0" />
+    <section className="relative min-h-screen flex items-center overflow-hidden bg-daurer-dark">
+      <ThreeBackground />
+      {/* Overlay for better readability over the 3D scene */}
+      <div className="absolute inset-0 bg-daurer-navy/70 z-0" />
 
       <div className="container mx-auto px-4 flex flex-col items-center justify-center text-center pt-24 pb-32 relative z-10">
         {/* Right: text (now centered) */}
