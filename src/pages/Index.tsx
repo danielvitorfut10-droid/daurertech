@@ -1,4 +1,3 @@
-import { useScrollReveal } from "@/hooks/useScrollReveal";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Stats from "@/components/Stats";
@@ -12,10 +11,8 @@ import Footer from "@/components/Footer";
 import MobileCTA from "@/components/MobileCTA";
 
 const Index = () => {
-  const ref = useScrollReveal();
-
   return (
-    <div ref={ref} className="min-h-screen">
+    <div className="min-h-screen">
       <Header />
       <Hero />
       <Stats />
