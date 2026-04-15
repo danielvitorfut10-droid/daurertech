@@ -33,7 +33,7 @@ export function HeroSection() {
                                     textClassName="font-bold tracking-tight"
                                 />
                             </div>
-                            <p className="mt-8 max-w-2xl text-balance text-lg text-white/80 h-20">
+                            <p className="mt-8 max-w-2xl text-balance text-lg lg:text-xl font-medium text-white drop-shadow-[0_4px_4px_rgba(0,0,0,0.8)] min-h-[5rem]">
                                 <Typewriter
                                     text="Criamos experiências digitais premium. Sites de alta conversão, rápidos e com design exclusivo para posicionar sua marca no topo do mercado."
                                     speed={30}
