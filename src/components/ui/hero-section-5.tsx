@@ -7,9 +7,29 @@ import { ProgressiveBlur } from '@/components/ui/progressive-blur'
 
 import { GooeyText } from '@/components/ui/gooey-text-morphing'
 import { Typewriter } from '@/components/ui/typewriter'
+import { TextScramble } from '@/components/ui/text-scramble'
 import { cn } from '@/lib/utils'
 import { Menu, X, ChevronRight } from 'lucide-react'
 import { useScroll, motion } from 'framer-motion' // Switched back to framer-motion as it's more stable for these imports in some envs, but user said motion/react. I'll try to stick to framer-motion if possible or motion if installed.
+import { useState } from 'react'
+
+function DaurerScramble() {
+    const [trigger, setTrigger] = useState(false)
+
+    return (
+        <TextScramble
+            as="span"
+            duration={0.7}
+            speed={0.035}
+            trigger={trigger}
+            onHoverStart={() => setTrigger(true)}
+            onScrambleComplete={() => setTrigger(false)}
+            className="font-bold tracking-tight whitespace-nowrap text-5xl md:text-6xl xl:text-7xl text-white select-none cursor-default"
+        >
+            Daurer
+        </TextScramble>
+    )
+}
 
 export function HeroSection() {
     return (
@@ -20,9 +40,7 @@ export function HeroSection() {
                     <div className="relative z-10 mx-auto flex max-w-7xl flex-col px-6 py-32 lg:px-12">
                         <div className="max-w-2xl">
                             <div className="flex flex-col lg:flex-row items-start lg:items-center gap-0 lg:gap-4 h-[80px] md:h-[100px] lg:h-[120px]">
-                                <span className="font-bold tracking-tight whitespace-nowrap text-5xl md:text-6xl xl:text-7xl text-white select-none">
-                                    Daurer
-                                </span>
+                                <DaurerScramble />
                                 <GooeyText
                                     texts={["Cria", "Otimiza", "Escala", "Vende"]}
                                     className="h-full flex-1"
