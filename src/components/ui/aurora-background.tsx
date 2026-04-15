@@ -34,7 +34,7 @@ const AuroraBackground: React.FC<AuroraBackgroundProps> = ({
     <div
       role="img"
       aria-label={ariaLabel}
-      className={`relative flex flex-col items-center justify-center bg-black text-slate-50 overflow-hidden ${className}`}
+      className={`relative flex flex-col items-center justify-center bg-black/0 text-slate-50 overflow-hidden ${className}`}
     >
       {/* Background layers (hidden from screen readers) */}
       <div className="absolute inset-0 overflow-hidden" aria-hidden="true">

@@ -59,6 +59,8 @@ export const InteractiveBackground = () => {
                     backgroundPosition: "center",
                     backgroundRepeat: "no-repeat",
                     perspective: 1000,
+                    mixBlendMode: "screen",
+                    opacity: 0.85,
                 }}
             >
                 {/* Overlay sutil na própria imagem simulando sombreamento direcional */}
