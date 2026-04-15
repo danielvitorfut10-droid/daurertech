@@ -227,15 +227,7 @@ const HeroHeader = () => {
                                     ))}
                                 </ul>
                             </div>
-                            <div className="flex w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit">
-                                <Button
-                                    size="sm"
-                                    className="bg-white/20 hover:bg-white/30 text-white border border-white/30 backdrop-blur-md rounded-full shadow-[0_0_15px_rgba(255,255,255,0.3)]">
-                                    <a href="#contato">
-                                        <span className="drop-shadow-sm font-semibold">Fale Conosco</span>
-                                    </a>
-                                </Button>
-                            </div>
+
                         </div>
                     </motion.div>
                 </div>
