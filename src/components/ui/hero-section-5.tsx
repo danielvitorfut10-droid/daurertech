@@ -3,7 +3,8 @@ import React from 'react'
 import { Button } from '@/components/ui/button'
 import { InfiniteSlider } from '@/components/ui/infinite-slider'
 import { ProgressiveBlur } from '@/components/ui/progressive-blur'
-import { SplineScene } from '@/components/ui/splite'
+
+import CyberpunkHeroImage from './cyberpunk-hero-image'
 import { GooeyText } from '@/components/ui/gooey-text-morphing'
 import { Typewriter } from '@/components/ui/typewriter'
 import { cn } from '@/lib/utils'
@@ -54,10 +55,7 @@ export function HeroSection() {
                             </div>
                         </div>
                         <div className="aspect-[2/3] absolute inset-1 overflow-hidden rounded-3xl border border-black/10 sm:aspect-video lg:rounded-[3rem] dark:border-white/5">
-                            <SplineScene 
-                                scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
-                                className="size-full"
-                            />
+                            <CyberpunkHeroImage />
                         </div>
                     </div>
                 </section>
