@@ -38,7 +38,7 @@ export const InteractiveBackground = () => {
     const rotateY = useTransform(x, [0, mounted ? window.innerWidth : 1000], [-5, 5])
 
     return (
-        <div className="fixed inset-0 -z-20 overflow-hidden bg-black pointer-events-none">
+        <div className="fixed inset-0 -z-20 overflow-hidden bg-transparent pointer-events-none">
             {/* Pontos de luz nos quatro cantos (Cyan e Magenta/Roxo para combinar com cyberpunk) */}
             <div className="absolute top-[-30%] left-[-15%] w-[60%] h-[60%] bg-purple-600/30 blur-[130px] rounded-full mix-blend-screen" />
             <div className="absolute top-[-20%] right-[-10%] w-[50%] h-[50%] bg-cyan-500/20 blur-[120px] rounded-full mix-blend-screen" />

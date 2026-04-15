@@ -7,6 +7,7 @@ import { ThemeProvider } from "./components/theme-provider";
 import Index from "./pages/Index.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import { InteractiveBackground } from "@/components/ui/interactive-background";
+import AuroraBackground from "@/components/ui/aurora-background";
 
 const queryClient = new QueryClient();
 
@@ -14,6 +15,7 @@ const App = () => (
   <QueryClientProvider client={queryClient}>
     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme" attribute="class">
       <TooltipProvider>
+        <AuroraBackground className="fixed inset-0 -z-30" />
         <InteractiveBackground />
 
         <div className="relative min-h-screen">

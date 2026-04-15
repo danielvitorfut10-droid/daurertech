@@ -39,9 +39,11 @@
     --sidebar-primary: 240 5.9% 10%;
     --sidebar-primary-foreground: 0 0% 98%;
     --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-accent-foreground: 220 20% 10%;
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+    --aurora-color1: rgba(168,85,247,0.2);
+    --aurora-color2: rgba(79,70,229,0.2);
   }
 
   .dark {
@@ -81,6 +83,8 @@
     --sidebar-accent-foreground: 240 4.8% 95.9%;
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+    --aurora-color1: rgba(168,85,247,0.2);
+    --aurora-color2: rgba(79,70,229,0.2);
   }
 }
 
@@ -95,5 +99,16 @@
 
   html {
     scroll-behavior: smooth;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.05);
   }
 }
