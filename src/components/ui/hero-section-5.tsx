@@ -178,51 +178,38 @@ const menuItems = [
 
 const HeroHeader = () => {
     const [menuState, setMenuState] = React.useState(false)
-    const [scrolled, setScrolled] = React.useState(false)
-    const { scrollYProgress } = useScroll()
-
-    React.useEffect(() => {
-        const unsubscribe = scrollYProgress.on('change', (latest) => {
-            setScrolled(latest > 0.05)
-        })
-        return () => unsubscribe()
-    }, [scrollYProgress])
 
     return (
-        <header>
+        <header className="fixed top-0 left-0 right-0 z-50 flex justify-center pt-6 px-4">
             <nav
                 data-state={menuState && 'active'}
-                className="group fixed z-20 w-full pt-2">
-                <div className={cn('mx-auto max-w-7xl px-6 transition-all duration-300 lg:px-12', scrolled ? 'bg-white/10 backdrop-blur-2xl shadow-[0_0_20px_rgba(255,255,255,0.2),inset_0_0_15px_rgba(255,255,255,0.1)] rounded-[50px] border border-white/20' : 'rounded-[50px]')}>
-                    <motion.div
-                        className={cn('relative flex flex-wrap items-center justify-center gap-6 py-3 duration-200 lg:gap-0 lg:py-6', scrolled && 'lg:py-4')}>
-                        <div className="flex items-center justify-center lg:w-auto">
-                            {/* Logo removed */}
-
+                className="group relative max-w-full"
+            >
+                <div className="mx-auto w-fit rounded-full bg-white/10 backdrop-blur-xl shadow-[0_4px_30px_rgba(0,0,0,0.1),inset_0_0_15px_rgba(255,255,255,0.2)] border border-white/20 px-8 sm:px-12 py-3 transition-all duration-300">
+                    <motion.div className="flex items-center justify-center">
+                        <div className="flex items-center justify-center">
                             <button
                                 onClick={() => setMenuState(!menuState)}
                                 aria-label={menuState == true ? 'Close Menu' : 'Open Menu'}
-                                className="absolute right-6 lg:hidden z-20 -m-2.5 block cursor-pointer p-2.5">
-                                <Menu className="group-data-[state=active]:rotate-180 group-data-[state=active]:scale-0 group-data-[state=active]:opacity-0 m-auto size-6 duration-200" />
-                                <X className="group-data-[state=active]:rotate-0 group-data-[state=active]:scale-100 group-data-[state=active]:opacity-100 absolute inset-0 m-auto size-6 -rotate-180 scale-0 opacity-0 duration-200" />
+                                className="absolute right-4 lg:hidden z-20 block cursor-pointer p-2">
+                                <Menu className="group-data-[state=active]:rotate-180 group-data-[state=active]:scale-0 group-data-[state=active]:opacity-0 size-6 text-white duration-200" />
+                                <X className="group-data-[state=active]:rotate-0 group-data-[state=active]:scale-100 group-data-[state=active]:opacity-100 absolute inset-0 m-auto size-6 text-white -rotate-180 scale-0 opacity-0 duration-200" />
                             </button>
 
                             <div className="block">
-                                <ul className="flex flex-wrap justify-center gap-4 sm:gap-8 text-sm font-medium">
+                                <ul className="flex flex-wrap justify-center gap-6 sm:gap-10 text-base md:text-lg font-bold tracking-wide">
                                     {menuItems.map((item, index) => (
                                         <li key={index}>
                                             <a
                                                 href={item.href}
-                                                className="text-white hover:text-white/80 block duration-150 font-semibold drop-shadow-md">
-                                                <span className="drop-shadow-sm">{item.name}</span>
+                                                className="text-white hover:text-white/80 block duration-150 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
+                                                <span>{item.name}</span>
                                             </a>
                                         </li>
                                     ))}
                                 </ul>
                             </div>
                         </div>
-
-
                     </motion.div>
                 </div>
             </nav>
