@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button'
 import { InfiniteSlider } from '@/components/ui/infinite-slider'
 import { ProgressiveBlur } from '@/components/ui/progressive-blur'
 
-import CyberpunkHeroImage from './cyberpunk-hero-image'
+
 import { GooeyText } from '@/components/ui/gooey-text-morphing'
 import { Typewriter } from '@/components/ui/typewriter'
 import { cn } from '@/lib/utils'
@@ -16,46 +16,41 @@ export function HeroSection() {
         <>
             <HeroHeader />
             <main className="overflow-x-hidden">
-                <section>
-                    <div className="relative py-24 pb-8 md:pb-12 lg:pb-16 lg:pt-72">
-                        <div className="relative z-10 mx-auto flex max-w-7xl flex-col px-6 lg:block lg:px-12">
-                            <div className="mx-auto max-w-lg text-center lg:ml-0 lg:max-w-full lg:text-left">
-                                <GooeyText 
-                                    texts={["Daurer Cria", "Daurer Otimiza", "Daurer Escala", "Daurer Vende"]} 
-                                    className="h-[80px] md:h-[100px] lg:h-[120px] mt-8 lg:mt-16" 
-                                    textClassName="font-bold tracking-tight" 
+                <section className="min-h-screen flex items-center">
+                    <div className="relative z-10 mx-auto flex max-w-7xl flex-col px-6 py-32 lg:px-12">
+                        <div className="max-w-2xl">
+                            <GooeyText 
+                                texts={["Daurer Cria", "Daurer Otimiza", "Daurer Escala", "Daurer Vende"]} 
+                                className="h-[80px] md:h-[100px] lg:h-[120px]" 
+                                textClassName="font-bold tracking-tight" 
+                            />
+                            <p className="mt-8 max-w-2xl text-balance text-lg text-white/80 h-20">
+                                <Typewriter
+                                    text="Criamos experiências digitais premium. Sites de alta conversão, rápidos e com design exclusivo para posicionar sua marca no topo do mercado."
+                                    speed={30}
+                                    loop={false}
+                                    cursorChar="|"
                                 />
-                                <p className="mt-8 max-w-2xl text-balance text-lg text-muted-foreground h-20">
-                                    <Typewriter
-                                        text="Criamos experiências digitais premium. Sites de alta conversão, rápidos e com design exclusivo para posicionar sua marca no topo do mercado."
-                                        speed={30}
-                                        loop={false}
-                                        cursorChar="|"
-                                    />
-                                </p>
+                            </p>
 
-                                <div className="mt-12 flex flex-col items-center justify-center gap-2 sm:flex-row lg:justify-start">
-                                    <Button
-                                        size="lg"
-                                        className="h-12 rounded-full pl-5 pr-3 text-base">
-                                        <a href="#link" className="flex items-center">
-                                            <span className="text-nowrap">Solicitar Orçamento</span>
-                                            <ChevronRight className="ml-1 h-4 w-4" />
-                                        </a>
-                                    </Button>
-                                    <Button
-                                        size="lg"
-                                        variant="ghost"
-                                        className="h-12 rounded-full px-5 text-base hover:bg-zinc-950/5 dark:hover:bg-white/5">
-                                        <a href="#link">
-                                            <span className="text-nowrap">Ver Portfólio</span>
-                                        </a>
-                                    </Button>
-                                </div>
+                            <div className="mt-12 flex flex-col items-start gap-2 sm:flex-row">
+                                <Button
+                                    size="lg"
+                                    className="h-12 rounded-full pl-5 pr-3 text-base bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 text-white">
+                                    <a href="#link" className="flex items-center">
+                                        <span className="text-nowrap">Solicitar Orçamento</span>
+                                        <ChevronRight className="ml-1 h-4 w-4" />
+                                    </a>
+                                </Button>
+                                <Button
+                                    size="lg"
+                                    variant="ghost"
+                                    className="h-12 rounded-full px-5 text-base text-white hover:bg-white/10">
+                                    <a href="#link">
+                                        <span className="text-nowrap">Ver Portfólio</span>
+                                    </a>
+                                </Button>
                             </div>
-                        </div>
-                        <div className="aspect-[2/3] absolute inset-1 overflow-hidden rounded-3xl border border-black/10 sm:aspect-video lg:rounded-[3rem] dark:border-white/5">
-                            <CyberpunkHeroImage />
                         </div>
                     </div>
                 </section>

@@ -4,7 +4,6 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { ThemeProvider } from "./components/theme-provider";
-import { DottedSurface } from "./components/ui/dotted-surface";
 import Index from "./pages/Index.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
@@ -14,13 +13,20 @@ const App = () => (
   <QueryClientProvider client={queryClient}>
     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme" attribute="class">
       <TooltipProvider>
+        {/* Global fixed cyberpunk background */}
+        <div
+          className="fixed inset-0 -z-10"
+          style={{
+            backgroundImage: "url('/34131209423563.png')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+          }}
+        />
+        {/* Dark overlay for legibility across all sections */}
+        <div className="fixed inset-0 -z-10 bg-black/55" />
+
         <div className="relative min-h-screen">
-          <DottedSurface className="size-full">
-            <div
-              aria-hidden="true"
-              className="pointer-events-none absolute -top-10 left-1/2 size-full -translate-x-1/2 rounded-full bg-[radial-gradient(ellipse_at_center,hsl(var(--foreground)/.1),transparent_50%)] blur-[30px]"
-            />
-          </DottedSurface>
           <Toaster />
           <Sonner />
           <BrowserRouter>
