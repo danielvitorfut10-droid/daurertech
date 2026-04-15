@@ -1,26 +1,6 @@
 'use client'
 
-import { Suspense, lazy } from 'react'
-const Spline = lazy(() => import('@splinetool/react-spline'))
-
-interface SplineSceneProps {
-  scene: string
-  className?: string
-}
-
-export function SplineScene({ scene, className }: SplineSceneProps) {
-  return (
-    <Suspense 
-      fallback={
-        <div className="w-full h-full flex items-center justify-center">
-          <span className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></span>
-        </div>
-      }
-    >
-      <Spline
-        scene={scene}
-        className={className}
-      />
-    </Suspense>
-  )
+// Spline/robot component DISABLED - replaced by CyberpunkHeroImage
+export function SplineScene(_props: { scene: string; className?: string }) {
+  return null
 }
