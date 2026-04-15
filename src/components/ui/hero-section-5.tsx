@@ -19,11 +19,16 @@ export function HeroSection() {
                 <section className="min-h-screen flex items-center">
                     <div className="relative z-10 mx-auto flex max-w-7xl flex-col px-6 py-32 lg:px-12">
                         <div className="max-w-2xl">
-                            <GooeyText 
-                                texts={["Daurer Cria", "Daurer Otimiza", "Daurer Escala", "Daurer Vende"]} 
-                                className="h-[80px] md:h-[100px] lg:h-[120px]" 
-                                textClassName="font-bold tracking-tight" 
-                            />
+                            <div className="flex flex-col lg:flex-row items-start lg:items-center gap-0 lg:gap-4 h-[80px] md:h-[100px] lg:h-[120px]">
+                                <span className="font-bold tracking-tight whitespace-nowrap text-5xl md:text-6xl xl:text-7xl text-white select-none">
+                                    Daurer
+                                </span>
+                                <GooeyText
+                                    texts={["Cria", "Otimiza", "Escala", "Vende"]}
+                                    className="h-full flex-1"
+                                    textClassName="font-bold tracking-tight"
+                                />
+                            </div>
                             <p className="mt-8 max-w-2xl text-balance text-lg text-white/80 h-20">
                                 <Typewriter
                                     text="Criamos experiências digitais premium. Sites de alta conversão, rápidos e com design exclusivo para posicionar sua marca no topo do mercado."
