@@ -182,13 +182,13 @@ const HeroHeader = () => {
     return (
         <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between pt-6 px-4 md:px-8 lg:px-12 w-full">
             {/* Logo */}
-            <div className="z-10 flex-shrink-0">
-                <a href="#home">
+            <div className="z-10 flex-shrink-0 flex items-center justify-center h-12 w-32 md:w-48 overflow-hidden relative">
+                <a href="#home" className="absolute flex items-center justify-center w-[200%] h-[200%]">
                     <img 
                         src="/imagem1.png" 
                         alt="Daurer Logo" 
-                        className="w-auto h-10 md:h-12 lg:h-[50px] object-contain drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]" 
-                        style={{ filter: "brightness(0) invert(1)" }}
+                        className="w-full h-full object-contain pointer-events-none" 
+                        style={{ filter: "invert(1)", mixBlendMode: "screen" }}
                     />
                 </a>
             </div>
