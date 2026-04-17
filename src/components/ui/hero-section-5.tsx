@@ -180,24 +180,25 @@ const HeroHeader = () => {
     const [menuState, setMenuState] = React.useState(false)
 
     return (
-        <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between pt-6 px-4 md:px-8 lg:px-12 w-full">
-            {/* Logo */}
-            <div className="z-10 flex-shrink-0 flex items-center justify-center h-12 w-32 md:w-48 overflow-hidden relative">
-                <a href="#home" className="absolute flex items-center justify-center w-[200%] h-[200%]">
-                    <img 
-                        src="/logo.png" 
-                        alt="Daurer Logo" 
-                        className="w-full h-full object-contain pointer-events-none" 
-                        style={{ filter: "invert(1)", mixBlendMode: "screen" }}
-                    />
-                </a>
-            </div>
+        <header className="fixed top-0 left-0 right-0 z-50 flex justify-center pt-6 px-4 pointer-events-none">
+            <div className="flex items-center gap-4 md:gap-6 pointer-events-auto max-w-full">
+                {/* Logo */}
+                <div className="flex-shrink-0 flex items-center justify-center h-10 w-24 md:h-12 md:w-32 overflow-hidden relative">
+                    <a href="#home" className="absolute flex items-center justify-center w-[200%] h-[200%]">
+                        <img 
+                            src="/logo.png" 
+                            alt="Daurer Logo" 
+                            className="w-full h-full object-contain pointer-events-none" 
+                            style={{ filter: "invert(1)", mixBlendMode: "screen" }}
+                        />
+                    </a>
+                </div>
 
-            {/* Nav */}
-            <nav
-                data-state={menuState && 'active'}
-                className="group absolute left-1/2 -translate-x-1/2 z-0 max-w-full"
-            >
+                {/* Nav */}
+                <nav
+                    data-state={menuState && 'active'}
+                    className="group relative max-w-full"
+                >
                 <div className="mx-auto w-fit rounded-full bg-white/10 backdrop-blur-xl shadow-[0_4px_30px_rgba(0,0,0,0.1),inset_0_0_15px_rgba(255,255,255,0.2)] border border-white/20 px-8 sm:px-12 py-3 transition-all duration-300">
                     <motion.div className="flex items-center justify-center">
                         <div className="flex items-center justify-center">
@@ -226,9 +227,7 @@ const HeroHeader = () => {
                     </motion.div>
                 </div>
             </nav>
-
-            {/* Spacer for centering */}
-            <div className="z-10 hidden md:block w-[100px]"></div>
+            </div>
         </header>
     )
 }
