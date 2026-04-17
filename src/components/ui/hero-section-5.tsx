@@ -191,11 +191,11 @@ const HeroHeader = () => {
                         <div className="flex items-center justify-center gap-4 sm:gap-6">
                             
                             {/* Logo Inside */}
-                            <a href="#home" className="flex-shrink-0 relative flex items-center justify-center w-36 md:w-48 mr-2 md:mr-6 z-10 transition-transform hover:scale-105 duration-300">
+                            <a href="#home" className="flex-shrink-0 relative flex items-center justify-center w-32 md:w-44 h-8 md:h-10 mr-2 md:mr-6 z-10 transition-transform hover:scale-105 duration-300">
                                 <img 
                                     src={logoSrc} 
                                     alt="Daurer Logo" 
-                                    className="w-full h-auto object-contain pointer-events-none drop-shadow-lg" 
+                                    className="absolute inset-0 m-auto w-[130%] max-w-none h-auto object-contain pointer-events-none drop-shadow-lg" 
                                 />
                             </a>
 
