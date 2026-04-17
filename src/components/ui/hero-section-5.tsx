@@ -46,10 +46,10 @@ export function HeroSection() {
                             <div className="mt-12 flex flex-col items-start gap-2 sm:flex-row">
                                 <Button
                                     size="lg"
-                                    className="h-12 rounded-full pl-5 pr-3 text-base bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 text-white">
+                                    className="h-12 rounded-full pl-6 pr-4 text-base bg-white hover:bg-white/90 text-black font-bold shadow-[0_0_20px_rgba(255,255,255,0.4)] hover:shadow-[0_0_35px_rgba(255,255,255,0.7)] hover:scale-105 transition-all duration-300 border-none group">
                                     <a href="#link" className="flex items-center">
-                                        <span className="text-nowrap">Solicitar Orçamento</span>
-                                        <ChevronRight className="ml-1 h-4 w-4" />
+                                        <span className="text-nowrap uppercase tracking-tight">Solicitar Orçamento</span>
+                                        <ChevronRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                                     </a>
                                 </Button>
                                 <Button
