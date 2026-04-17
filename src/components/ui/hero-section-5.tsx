@@ -11,6 +11,7 @@ import { AnimatedText } from '@/components/ui/animated-underline-text-one'
 import { cn } from '@/lib/utils'
 import { Menu, X, ChevronRight } from 'lucide-react'
 import { useScroll, motion } from 'framer-motion'
+import logoSrc from '@/assets/logo.png'
 
 export function HeroSection() {
     return (
@@ -192,7 +193,7 @@ const HeroHeader = () => {
                             {/* Logo Inside */}
                             <a href="#home" className="flex-shrink-0 relative flex items-center justify-center w-20 h-8 md:w-28 md:h-10 mr-4 ml-0 z-10 transition-transform hover:scale-105 duration-300">
                                 <img 
-                                    src="/logo.png" 
+                                    src={logoSrc} 
                                     alt="Daurer Logo" 
                                     className="absolute pointer-events-none" 
                                     style={{ 
