@@ -180,10 +180,23 @@ const HeroHeader = () => {
     const [menuState, setMenuState] = React.useState(false)
 
     return (
-        <header className="fixed top-0 left-0 right-0 z-50 flex justify-center pt-6 px-4">
+        <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between pt-6 px-4 md:px-8 lg:px-12 w-full">
+            {/* Logo */}
+            <div className="z-10 flex-shrink-0">
+                <a href="#home">
+                    <img 
+                        src="/imagem1.png" 
+                        alt="Daurer Logo" 
+                        className="w-auto h-10 md:h-12 lg:h-[50px] object-contain drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]" 
+                        style={{ filter: "brightness(0) invert(1)" }}
+                    />
+                </a>
+            </div>
+
+            {/* Nav */}
             <nav
                 data-state={menuState && 'active'}
-                className="group relative max-w-full"
+                className="group absolute left-1/2 -translate-x-1/2 z-0 max-w-full"
             >
                 <div className="mx-auto w-fit rounded-full bg-white/10 backdrop-blur-xl shadow-[0_4px_30px_rgba(0,0,0,0.1),inset_0_0_15px_rgba(255,255,255,0.2)] border border-white/20 px-8 sm:px-12 py-3 transition-all duration-300">
                     <motion.div className="flex items-center justify-center">
@@ -213,6 +226,9 @@ const HeroHeader = () => {
                     </motion.div>
                 </div>
             </nav>
+
+            {/* Spacer for centering */}
+            <div className="z-10 hidden md:block w-[100px]"></div>
         </header>
     )
 }
