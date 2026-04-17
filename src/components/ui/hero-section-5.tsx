@@ -185,7 +185,7 @@ const HeroHeader = () => {
             <div className="z-10 flex-shrink-0 flex items-center justify-center h-12 w-32 md:w-48 overflow-hidden relative">
                 <a href="#home" className="absolute flex items-center justify-center w-[200%] h-[200%]">
                     <img 
-                        src="/imagem1.png" 
+                        src="/logo.png" 
                         alt="Daurer Logo" 
                         className="w-full h-full object-contain pointer-events-none" 
                         style={{ filter: "invert(1)", mixBlendMode: "screen" }}
