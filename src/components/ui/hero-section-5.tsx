@@ -190,12 +190,11 @@ const HeroHeader = () => {
                         <div className="flex items-center justify-center gap-4 sm:gap-6">
                             
                             {/* Logo Inside */}
-                            <a href="#home" className="flex-shrink-0 relative flex items-center justify-center w-28 h-8 md:w-36 md:h-10 ml-2 mr-4 z-10 transition-transform hover:scale-105 duration-300">
+                            <a href="#home" className="flex-shrink-0 flex items-center justify-center h-8 md:h-10 mr-4 ml-2 z-10 transition-transform hover:scale-105 duration-300">
                                 <img 
                                     src="/logo.png" 
                                     alt="Daurer Logo" 
-                                    className="absolute w-[280%] md:w-[300%] max-w-none h-auto pointer-events-none drop-shadow-md" 
-                                    style={{ filter: "invert(1) contrast(1.2)", mixBlendMode: "screen" }}
+                                    className="h-full w-auto object-contain scale-[1.5] md:scale-[2] pointer-events-none drop-shadow-md" 
                                 />
                             </a>
 
