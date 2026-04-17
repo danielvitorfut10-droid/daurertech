@@ -181,27 +181,26 @@ const HeroHeader = () => {
 
     return (
         <header className="fixed top-0 left-0 right-0 z-50 flex justify-center pt-6 px-4 pointer-events-none">
-            <div className="flex items-center gap-4 md:gap-6 pointer-events-auto max-w-full">
-                {/* Logo */}
-                <div className="flex-shrink-0 flex items-center justify-center h-10 w-24 md:h-12 md:w-32 overflow-hidden relative">
-                    <a href="#home" className="absolute flex items-center justify-center w-[200%] h-[200%]">
-                        <img 
-                            src="/logo.png" 
-                            alt="Daurer Logo" 
-                            className="w-full h-full object-contain pointer-events-none" 
-                            style={{ filter: "invert(1)", mixBlendMode: "screen" }}
-                        />
-                    </a>
-                </div>
-
-                {/* Nav */}
-                <nav
-                    data-state={menuState && 'active'}
-                    className="group relative max-w-full"
-                >
-                <div className="mx-auto w-fit rounded-full bg-white/10 backdrop-blur-xl shadow-[0_4px_30px_rgba(0,0,0,0.1),inset_0_0_15px_rgba(255,255,255,0.2)] border border-white/20 px-8 sm:px-12 py-3 transition-all duration-300">
+            <nav
+                data-state={menuState && 'active'}
+                className="group relative max-w-full pointer-events-auto"
+            >
+                <div className="mx-auto w-fit rounded-full bg-white/10 backdrop-blur-xl shadow-[0_4px_30px_rgba(0,0,0,0.1),inset_0_0_15px_rgba(255,255,255,0.2)] border border-white/20 pl-4 pr-8 sm:pl-6 sm:pr-12 py-2 md:py-3 transition-all duration-300">
                     <motion.div className="flex items-center justify-center">
-                        <div className="flex items-center justify-center">
+                        <div className="flex items-center justify-center gap-4 sm:gap-6">
+                            
+                            {/* Logo Inside */}
+                            <a href="#home" className="flex-shrink-0 flex items-center justify-center h-8 w-24 md:h-10 md:w-32 overflow-hidden relative">
+                                <div className="absolute flex items-center justify-center w-[200%] h-[200%]">
+                                    <img 
+                                        src="/logo.png" 
+                                        alt="Daurer Logo" 
+                                        className="w-full h-full object-contain pointer-events-none" 
+                                        style={{ filter: "invert(1)", mixBlendMode: "screen" }}
+                                    />
+                                </div>
+                            </a>
+
                             <button
                                 onClick={() => setMenuState(!menuState)}
                                 aria-label={menuState == true ? 'Close Menu' : 'Open Menu'}
@@ -211,7 +210,7 @@ const HeroHeader = () => {
                             </button>
 
                             <div className="block">
-                                <ul className="flex flex-wrap justify-center gap-6 sm:gap-10 text-base md:text-lg font-bold tracking-wide">
+                                <ul className="flex flex-wrap justify-center gap-4 sm:gap-8 text-base md:text-lg font-bold tracking-wide">
                                     {menuItems.map((item, index) => (
                                         <li key={index}>
                                             <a
@@ -227,7 +226,6 @@ const HeroHeader = () => {
                     </motion.div>
                 </div>
             </nav>
-            </div>
         </header>
     )
 }
